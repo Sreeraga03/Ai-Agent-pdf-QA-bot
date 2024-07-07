@@ -50,9 +50,10 @@ The answers will be displayed in a structured JSON format.
 # File Structure
 
 pdf-question-answering-app/
-main.py                   # Main application code
-requirements.txt          # List of required packages
-README.md                 # Project documentation
+1.main.py                   # Main application code
+2.requirements.txt          # List of required packages
+4.answers.json              #answers
+3.README.md                 # Project documentation
 
 # Contributing
 1.Fork the repository.
