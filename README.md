@@ -27,11 +27,11 @@ conda activate llmproject
 3.Install the required packages:
 pip install -r requirements.txt
 
-#Configuration
+# Configuration
 1.Set up OpenAI API key:
 Replace "your_openai_api_key" in main.py with your actual OpenAI API key(The current API will not work as i exchange the characters).
 
-#Usage
+# Usage
 1.Run the Streamlit app:
 streamlit run main.py
 
@@ -47,7 +47,7 @@ Click the "Submit" button to process the PDF and questions.
 5.View Answers:
 The answers will be displayed in a structured JSON format.
 
-#File Structure
+# File Structure
 
 pdf-question-answering-app/
 │
@@ -55,14 +55,14 @@ pdf-question-answering-app/
 ├── requirements.txt          # List of required packages
 └── README.md                 # Project documentation
 
-#Contributing
+# Contributing
 1.Fork the repository.
 2.Create a new branch (git checkout -b feature/your-feature-name).
 3.Commit your changes (git commit -am 'Add some feature').
 4.Push to the branch (git push origin feature/your-feature-name).
 5.Create a new Pull Request.
 
-#Acknowledgments
+# Acknowledgments
 
 [OpenAI](https://openai.com/) for their powerful language model.
 [Streamlit](https://streamlit.io/) for their easy-to-use web app framework.
