@@ -1,15 +1,17 @@
 import os
 import json
-from PyPDF2 import PdfReader
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.vectorstores import FAISS
-from langchain.chains.question_answering import load_qa_chain
+from PyPDF2 import PdfReader # Used to read PDF files
+from langchain.embeddings.openai import OpenAIEmbeddings # components from the LangChain library to handle embeddings
+from langchain.text_splitter import  CharacterTextSplitter # it will handle text splitting
+from langchain.vectorstores import FAISS # used for vector storage
+from langchain.chains.question_answering import load_qa_chain # question answering
+# as default it use GPT-3 models like text-davinci-003 or text-davinci-002
 from langchain.llms import OpenAI
+
 import streamlit as st
 
 # Set up OpenAI API key
-os.environ["OPENAI_API_KEY"] = "ak-proj-hgjASeo5vyumWzlPRmepT3BlbkFJ1wDNElVFqzfVQQBg6nag"
+os.environ["OPENAI_API_KEY"] = "akp-proj-hgjASeo5vyumWzlPRmepT3BlbkFJ1wDNElVFqzfVQQBg6ntotoyis"
 
 # Streamlit interface
 st.title("PDF Question Answering App")
@@ -23,6 +25,7 @@ def process_pdf_and_questions():
         pdfreader = PdfReader(uploaded_file)
 
         # Read text from PDF
+        # here it extract each page text and feed into raw_text variable
         raw_text = ''
         for i, page in enumerate(pdfreader.pages):
             content = page.extract_text()
