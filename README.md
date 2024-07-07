@@ -57,9 +57,9 @@ pdf-question-answering-app/
 
 # Contributing
 1.Fork the repository.
-2.Create a new branch (git checkout -b feature/your-feature-name).
+2.Create a new branch (git checkout -b feature/feature-name).
 3.Commit your changes (git commit -am 'Add some feature').
-4.Push to the branch (git push origin feature/your-feature-name).
+4.Push to the branch (git push origin feature/feature-name).
 5.Create a new Pull Request.
 
 # Acknowledgments
