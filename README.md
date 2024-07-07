@@ -50,6 +50,7 @@ The answers will be displayed in a structured JSON format.
 # File Structure
 
 pdf-question-answering-app/
+
 │
 ├── main.py                   # Main application code
 ├── requirements.txt          # List of required packages
