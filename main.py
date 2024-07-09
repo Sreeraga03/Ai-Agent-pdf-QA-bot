@@ -40,6 +40,31 @@ def process_pdf_and_questions():
             length_function=len,
         )
         texts = text_splitter.split_text(raw_text)
+        
+        #if we are not using langchain framework we can approch text splitting using list comprehention method.
+        #for example lets assume the sentence we have is "The company offers paid vacation for all full-time regular employees."
+        raw_text = "The company offers paid vacation for all full-time regular employees."
+        
+        # for simplicity lets set less Parameters
+        chunk_size = 20
+        chunk_overlap = 5
+        
+        # it calculate the start indices
+        start_indices = range(0, len(raw_text), chunk_size - chunk_overlap)
+        
+        # then generate chunks with overlap
+        chunks = [raw_text[i:i+chunk_size] for i in start_indices]
+        
+        # here it will display the chunks
+        for i, chunk in enumerate(chunks):
+            print(f"Chunk {i+1}: '{chunk}'")
+            # output will be like this 
+        Chunk 1: 'The company offers paid v'  #Start at index 0, end at index 20.
+        Chunk 2: 'ers paid vacation for al'   #Start at index 15 (0 + 15), end at index 35 (15 + 20)
+        Chunk 3: 'ation for all full-time '   #Start at index 30 (15 + 15), end at index 50 (30 + 20)
+        Chunk 4: ' full-time regular emplo'   #Start at index 45 (30 + 15), end at index 65 (45 + 20)
+        #here we have few disadvantages bcz the word is cutting in between so it will loss the context of the word and accuracy
+        #otherwise we need to call some functions with some looping to avoid those inbetween cutting, in langchain we can reduce this issue by using recursivetext split
 
         # Download embeddings from OpenAI
         embeddings = OpenAIEmbeddings()
